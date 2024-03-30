@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,175 +14,177 @@
   <!-- Importar estilos css -->
   <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
 
-<div class="container text-center">
-  <!-- Encabezado -->
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Autómata Finito Determinístico</h3>
-      <!-- Contenedor del autómata -->
-      <div id="mynetwork"></div>
-    </div>
-  </div>
-  <!-- Entrada de cadena y verificación -->
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <div class="input-group mb-3">
-        <!-- Entrada de cadena -->
-        <input type="text" id="cadenaInput" class="form-control form-control-sm" placeholder="Ingresa la cadena..">
-        <!-- Botón de verificación -->
-        <div class="input-group-append">
-          <button class="btn btn-primary btn-sm btn-verificar" onclick="verificarCadena()">Verificar</button>
-        </div>
-      </div>
-      <!-- Resultado de la verificación -->
-      <p id="resultado"></p>
-    </div>
-  </div>
-   <!-- Información del autómata -->
-   <div class="row justify-content-center mt-3">
-    <div class="col-md-4">
-      <!-- Botón para mostrar/ocultar información -->
-      <button id="toggleBtn" class="btn btn-secondary btn-block mb-3" onclick="toggleInfo()">Mostrar Información</button>
-      <!-- Contenedor de información (inicialmente oculto) -->
-      <div id="info" class="hidden">
-        <h2 class="mt-3">Datos</h2>
-        <!-- Alfabeto de entrada -->
-        <p><strong>Alfabeto de entrada:</strong> 0,1,2,3,4,5,6,7,8,9</p>
-        <!-- Conjunto de estados -->
-        <p><strong>Conjunto de estados:</strong> a,b,c</p>
-        <!-- Funciones de transición -->
-        <p><strong>Funciones de transición:</strong></p>
-        <div class="row">
-          <!-- Columna para las transiciones desde el estado 'a' -->
-          <div class="col">
-            <h3>f(a)</h3>
-            <ul>
-              <li>f(a,0)=b</li>
-              <li>f(a,2)=b</li>
-              <li>f(a,4)=b</li>
-              <li>f(a,6)=b</li>
-              <li>f(a,8)=b</li>
-              <li>f(a,1)=c</li>
-              <li>f(a,3)=c</li>
-              <li>f(a,5)=c</li>
-              <li>f(a,7)=c</li>
-              <li>f(a,9)=c</li>
-            </ul>
-          </div>
-          <!-- Columna para las transiciones desde el estado 'b' -->
-          <div class="col">
-            <h3>f(b)</h3>
-            <ul>
-              <li>f(b,0)=b</li>
-              <li>f(b,2)=b</li>
-              <li>f(b,4)=b</li>
-              <li>f(b,6)=b</li>
-              <li>f(b,8)=b</li>
-              <li>f(b,1)=c</li>
-              <li>f(b,3)=c</li>
-              <li>f(b,5)=c</li>
-              <li>f(b,7)=c</li>
-              <li>f(b,9)=c</li>
-            </ul>
-          </div>
-          <!-- Columna para las transiciones desde el estado 'c' -->
-          <div class="col">
-            <h3>f(c)</h3>
-            <ul>
-              <li>f(c,0)=b</li>
-              <li>f(c,2)=b</li>
-              <li>f(c,4)=b</li>
-              <li>f(c,6)=b</li>
-              <li>f(c,8)=b</li>
-              <li>f(c,1)=c</li>
-              <li>f(c,3)=c</li>
-              <li>f(c,5)=c</li>
-              <li>f(c,7)=c</li>
-              <li>f(c,9)=c</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Estado inicial -->
-        <p><strong>Estado inicial:</strong> a</p>
-        <!-- Estado final o de aceptación -->
-        <p><strong>Estado final o de aceptación:</strong> c</p>
+  <div class="container text-center">
+    <!-- Encabezado -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Autómata Finito Determinístico</h3>
+        <!-- Contenedor del autómata -->
+        <div id="mynetwork"></div>
       </div>
     </div>
+    <!-- Entrada de cadena y verificación -->
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="input-group mb-3">
+          <!-- Entrada de cadena -->
+          <input type="text" id="cadenaInput" class="form-control form-control-sm" placeholder="Ingresa la cadena..">
+          <!-- Botón de verificación -->
+          <div class="input-group-append">
+            <button class="btn btn-primary btn-sm btn-verificar" onclick="verificarCadena()">Verificar</button>
+          </div>
+        </div>
+        <!-- Resultado de la verificación -->
+        <p id="resultado"></p>
+      </div>
+    </div>
+    <!-- Información del autómata -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-4">
+        <!-- Botón para mostrar/ocultar información -->
+        <button id="toggleBtn" class="btn btn-secondary btn-block mb-3" onclick="toggleInfo()">Mostrar
+          Información</button>
+        <!-- Contenedor de información (inicialmente oculto) -->
+        <div id="info" class="hidden">
+          <h2 class="mt-3">Datos</h2>
+          <!-- Alfabeto de entrada -->
+          <p><strong>Alfabeto de entrada:</strong> 0,1,2,3,4,5,6,7,8,9</p>
+          <!-- Conjunto de estados -->
+          <p><strong>Conjunto de estados:</strong> a,b,c</p>
+          <!-- Funciones de transición -->
+          <p><strong>Funciones de transición:</strong></p>
+          <div class="row">
+            <!-- Columna para las transiciones desde el estado 'a' -->
+            <div class="col">
+              <h3>f(a)</h3>
+              <ul>
+                <li>f(a,0)=b</li>
+                <li>f(a,2)=b</li>
+                <li>f(a,4)=b</li>
+                <li>f(a,6)=b</li>
+                <li>f(a,8)=b</li>
+                <li>f(a,1)=c</li>
+                <li>f(a,3)=c</li>
+                <li>f(a,5)=c</li>
+                <li>f(a,7)=c</li>
+                <li>f(a,9)=c</li>
+              </ul>
+            </div>
+            <!-- Columna para las transiciones desde el estado 'b' -->
+            <div class="col">
+              <h3>f(b)</h3>
+              <ul>
+                <li>f(b,0)=b</li>
+                <li>f(b,2)=b</li>
+                <li>f(b,4)=b</li>
+                <li>f(b,6)=b</li>
+                <li>f(b,8)=b</li>
+                <li>f(b,1)=c</li>
+                <li>f(b,3)=c</li>
+                <li>f(b,5)=c</li>
+                <li>f(b,7)=c</li>
+                <li>f(b,9)=c</li>
+              </ul>
+            </div>
+            <!-- Columna para las transiciones desde el estado 'c' -->
+            <div class="col">
+              <h3>f(c)</h3>
+              <ul>
+                <li>f(c,0)=b</li>
+                <li>f(c,2)=b</li>
+                <li>f(c,4)=b</li>
+                <li>f(c,6)=b</li>
+                <li>f(c,8)=b</li>
+                <li>f(c,1)=c</li>
+                <li>f(c,3)=c</li>
+                <li>f(c,5)=c</li>
+                <li>f(c,7)=c</li>
+                <li>f(c,9)=c</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Estado inicial -->
+          <p><strong>Estado inicial:</strong> a</p>
+          <!-- Estado final o de aceptación -->
+          <p><strong>Estado final o de aceptación:</strong> c</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
 
-<!-- Script JavaScript para mostrar/ocultar información y dibujar el autómata -->
-<script type="text/javascript">
-  // Función para mostrar u ocultar la información del autómata
-  function toggleInfo() {
-    var infoDiv = document.getElementById("info");
-    var toggleBtn = document.getElementById("toggleBtn");
+  <!-- Script JavaScript para mostrar/ocultar información y dibujar el autómata -->
+  <script type="text/javascript">
+    // Función para mostrar u ocultar la información del autómata
+    function toggleInfo() {
+      var infoDiv = document.getElementById("info");
+      var toggleBtn = document.getElementById("toggleBtn");
 
-    if (infoDiv.style.display === "none") {
-      infoDiv.style.display = "block"; // Mostrar información
-      toggleBtn.textContent = "Ocultar Información"; // Cambiar texto del botón
-    } else {
-      infoDiv.style.display = "none";  // Ocultar información
-      toggleBtn.textContent = "Mostrar Información"; // Cambiar texto del botón
+      if (infoDiv.style.display === "none") {
+        infoDiv.style.display = "block"; // Mostrar información
+        toggleBtn.textContent = "Ocultar Información"; // Cambiar texto del botón
+      } else {
+        infoDiv.style.display = "none";  // Ocultar información
+        toggleBtn.textContent = "Mostrar Información"; // Cambiar texto del botón
+      }
     }
-  }
 
-  
-  // Función que se ejecuta cuando se carga el DOM
-  document.addEventListener('DOMContentLoaded', function () {
-    // Definir los nodos (estados) del autómata
-    var nodes = [
-      { id: 'a', label: 'A', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
-      { id: 'b', label: 'B', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
-      { id: 'c', label: 'C', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle', borderWidth: 6, borderWidthSelected: 6 },
-    ];
+    // Función que se ejecuta cuando se carga el DOM
+    document.addEventListener('DOMContentLoaded', function () {
+      // Definir los nodos (estados) del autómata
+      var nodes = [
+        { id: 'a', label: 'A', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
+        { id: 'b', label: 'B', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
+        { id: 'c', label: 'C', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle', borderWidth: 6, borderWidthSelected: 6 },
+      ];
 
-    // Definir las aristas (transiciones) del autómata
-    var edges = [
-      { from: 'a', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'a', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'b', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'c', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'c', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'b', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-    ];
+      // Definir las aristas (transiciones) del autómata
+      var edges = [
+        { from: 'a', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+        { from: 'a', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+        { from: 'b', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+        { from: 'c', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+        { from: 'c', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+        { from: 'b', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+      ];
 
-    // Obtener el contenedor para el autómata
-    var container = document.getElementById('mynetwork');
+      // Obtener el contenedor para el autómata
+      var container = document.getElementById('mynetwork');
 
-    // Definir los datos del autómata (nodos y aristas)
-    var data = {
-      nodes: nodes,
-      edges: edges
-    };
+      // Definir los datos del autómata (nodos y aristas)
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
 
-    // Opciones de visualización del autómata
-    var options = {
-      nodes: {
-        font: { size: 20, color: '#000000' },
-        margin: 10
-      },
-      edges: {
-        font: { size: 8, color: '#000000' },
-        smooth: { type: 'continuous' }
-      },
-      physics: {
-        enabled: true,
-        solver: 'repulsion',
-        repulsion: {
-          nodeDistance: 150
-        }
-      },
-    };
+      // Opciones de visualización del autómata
+      var options = {
+        nodes: {
+          font: { size: 20, color: '#000000' },
+          margin: 10
+        },
+        edges: {
+          font: { size: 8, color: '#000000' },
+          smooth: { type: 'continuous' }
+        },
+        physics: {
+          enabled: true,
+          solver: 'repulsion',
+          repulsion: {
+            nodeDistance: 150
+          }
+        },
+      };
 
-    // Crear la instancia del autómata visual
-    var network = new vis.Network(container, data, options);
-  });
+      // Crear la instancia del autómata visual
+      var network = new vis.Network(container, data, options);
+    });
 
 
-</script>
+  </script>
 </body>
+
 </html>

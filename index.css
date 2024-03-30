@@ -32,7 +32,6 @@
     border-color: purple;
 }
 
-
 .hidden {
     display: none;
     transition: opacity 0.3s ease;
@@ -69,6 +68,14 @@ h3 {
     color: white;
 }
 
+pre {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
 label[for="secuencia"] {
     color: rgb(255, 255, 255);
     /* Cambia el color del texto a rojo */
@@ -76,12 +83,4 @@ label[for="secuencia"] {
     /* Hace el texto en negrita */
     font-size: 18px;
     /* Cambia el tamaño de la fuente */
-}
-
-pre {
-    color: white;
-}
-
-li {
-    color: white;
 }

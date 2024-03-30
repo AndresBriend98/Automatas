@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,140 +15,144 @@
   <link rel="stylesheet" href="./index.css">
   <!-- Estilos CSS internos -->
   <style type="text/css">
-    
+
   </style>
 </head>
+
 <body>
 
-<div class="container text-center">
-  <!-- Encabezado -->
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Autómata Probabilístico</h3>
-      <!-- Contenedor del autómata -->
-      <div id="mynetwork"></div>
-    </div>
-  </div>
-<!-- Entrada de cadena y verificación -->
-<div class="row justify-content-center">
-  <div class="col-md-6"> <!-- Cambiado a col-md-6 para hacer el input más largo -->
-    <!-- Etiqueta para ingresar la secuencia de estados -->
-    <label for="secuencia">Ingrese la secuencia de estados:</label>
-    <!-- Contenedor del input y el botón -->
-    <div class="input-group mb-3">
-      <input type="text" id="secuencia" class="form-control form-control-sm" placeholder="3,3,3,1">
-      <!-- Botón para calcular la probabilidad -->
-      <div class="input-group-append">
-        <button class="btn btn-primary btn-sm btn-verificar" onclick="mostrarResultado()">Calcular Probabilidad</button>
+  <div class="container text-center">
+    <!-- Encabezado -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Autómata Probabilístico</h3>
+        <!-- Contenedor del autómata -->
+        <div id="mynetwork"></div>
       </div>
     </div>
-  </div>
-</div>
+    <!-- Entrada de cadena y verificación -->
+    <div class="row justify-content-center">
+      <div class="col-md-6"> <!-- Cambiado a col-md-6 para hacer el input más largo -->
+        <!-- Etiqueta para ingresar la secuencia de estados -->
+        <label for="secuencia">Ingrese la secuencia de estados:</label>
+        <!-- Contenedor del input y el botón -->
+        <div class="input-group mb-3">
+          <input type="text" id="secuencia" class="form-control form-control-sm" placeholder="3,3,3,1">
+          <!-- Botón para calcular la probabilidad -->
+          <div class="input-group-append">
+            <button class="btn btn-primary btn-sm btn-verificar" onclick="mostrarResultado()">Calcular
+              Probabilidad</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Resultado de la verificación -->
-<div class="row justify-content-center">
-  <div class="col-md-6"> <!-- Cambiado a col-md-6 para que tenga el mismo ancho que el input -->
-    <p id="resultado"></p>
-  </div>
-</div>
+    <!-- Resultado de la verificación -->
+    <div class="row justify-content-center">
+      <div class="col-md-6"> <!-- Cambiado a col-md-6 para que tenga el mismo ancho que el input -->
+        <p id="resultado"></p>
+      </div>
+    </div>
 
 
-  <!-- Información del problema -->
-  <div class="row justify-content-center">
-    <div>
-      <!-- Botón para mostrar/ocultar información -->
-      <button id="toggleBtn" class="btn btn-secondary btn-block mb-3" onclick="toggleInfo()">Mostrar Información</button>
-      <!-- Contenedor de información (inicialmente oculto) -->
-      <div id="info" class="hidden">
-        <h4>Problema</h4>
-        <p>¿Con qué probabilidad el tiempo de 8 días será: Sol-Sol-Sol-Lluvia-Lluvia-Sol-Nubes-Sol?</p>
-        <h4>Datos</h4>
-        <p><strong>Estados:</strong> 1-Lluvia, 2-Nubes, 3-Sol</p>
-        <p><strong>Probabilidad de transición:</strong></p>
-        <pre>
+    <!-- Información del problema -->
+    <div class="row justify-content-center">
+      <div>
+        <!-- Botón para mostrar/ocultar información -->
+        <button id="toggleBtn" class="btn btn-secondary btn-block mb-3" onclick="toggleInfo()">Mostrar
+          Información</button>
+        <!-- Contenedor de información (inicialmente oculto) -->
+        <div id="info" class="hidden">
+          <h4>Problema</h4>
+          <p>¿Con qué probabilidad el tiempo de 8 días será: Sol-Sol-Sol-Lluvia-Lluvia-Sol-Nubes-Sol?</p>
+          <h4>Datos</h4>
+          <p><strong>Estados:</strong> 1-Lluvia, 2-Nubes, 3-Sol</p>
+          <p><strong>Probabilidad de transición:</strong></p>
+          <pre>
         A = | 0.4   0.3   0.3 |
             | 0.2   0.6   0.2 |
             | 0.1   0.1   0.8 |
         </pre>
-        <p><strong>Vector de probabilidades iniciales:</strong> π = (0.0, 0.0, 1.0)</p>
-        <p><strong>Probabilidad de observación (O):</strong> 3, 3, 3, 1, 1, 3, 2, 3</p>
+          <p><strong>Vector de probabilidades iniciales:</strong> π = (0.0, 0.0, 1.0)</p>
+          <p><strong>Probabilidad de observación (O):</strong> 3, 3, 3, 1, 1, 3, 2, 3</p>
+        </div>
       </div>
     </div>
-  </div>
 
-<!-- Script JavaScript para mostrar/ocultar información y dibujar el autómata -->
-<script type="text/javascript">
-  // Función para mostrar u ocultar la información del autómata
-  function toggleInfo() {
-    var infoDiv = document.getElementById("info");
-    var toggleBtn = document.getElementById("toggleBtn");
+    <!-- Script JavaScript para mostrar/ocultar información y dibujar el autómata -->
+    <script type="text/javascript">
+      // Función para mostrar u ocultar la información del autómata
+      function toggleInfo() {
+        var infoDiv = document.getElementById("info");
+        var toggleBtn = document.getElementById("toggleBtn");
 
-    if (infoDiv.style.display === "none") {
-      infoDiv.style.display = "block"; // Mostrar información
-      toggleBtn.textContent = "Ocultar Información"; // Cambiar texto del botón
-    } else {
-      infoDiv.style.display = "none";  // Ocultar información
-      toggleBtn.textContent = "Mostrar Información"; // Cambiar texto del botón
-    }
-  }
-
-  
-  // Función que se ejecuta cuando se carga el DOM
-  document.addEventListener('DOMContentLoaded', function () {
-    // Definir los nodos (estados) del autómata
-    var nodes = [
-      { id: 'Lluvia', label: 'Lluvia', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
-      { id: 'Nubes', label: 'Nubes', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
-      { id: 'Sol', label: 'Sol', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' }
-    ];
-
-    // Definir las aristas (transiciones) del autómata
-    var edges = [
-      { from: 'Lluvia', to: 'Nubes', label: '0.3', arrows: { to: { enabled: true, scaleFactor: 0.5 }} }, 
-      { from: 'Lluvia', to: 'Lluvia', label: '0.4', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Nubes', to: 'Nubes', label: '0.6', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Nubes', to: 'Lluvia', label: '0.2', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Nubes', to: 'Sol', label: '0.2', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Sol', to: 'Nubes', label: '0.1', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Sol', to: 'Sol', label: '0.8', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Sol', to: 'Lluvia', label: '0.1', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      { from: 'Lluvia', to: 'Sol', label: '0.3', arrows: { to: { enabled: true, scaleFactor: 0.5 }} },
-      
-    ];
-
-    // Obtener el contenedor para el autómata
-    var container = document.getElementById('mynetwork');
-
-    // Definir los datos del autómata (nodos y aristas)
-    var data = {
-      nodes: nodes,
-      edges: edges
-    };
-
-    // Opciones de visualización del autómata
-    var options = {
-      nodes: {
-        font: { size: 20, color: '#000000' },
-        margin: 10
-      },
-      edges: {
-        font: { size: 12, color: '#000000' },
-        smooth: { type: 'continuous' }
-      },
-      physics: {
-        enabled: true,
-        solver: 'repulsion',
-        repulsion: {
-          nodeDistance: 150
+        if (infoDiv.style.display === "none") {
+          infoDiv.style.display = "block"; // Mostrar información
+          toggleBtn.textContent = "Ocultar Información"; // Cambiar texto del botón
+        } else {
+          infoDiv.style.display = "none";  // Ocultar información
+          toggleBtn.textContent = "Mostrar Información"; // Cambiar texto del botón
         }
-      },
-    };
-
-    // Crear la instancia del autómata visual
-    var network = new vis.Network(container, data, options);
-  });
+      }
 
 
-</script>
+      // Función que se ejecuta cuando se carga el DOM
+      document.addEventListener('DOMContentLoaded', function () {
+        // Definir los nodos (estados) del autómata
+        var nodes = [
+          { id: 'Lluvia', label: 'Lluvia', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
+          { id: 'Nubes', label: 'Nubes', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
+          { id: 'Sol', label: 'Sol', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' }
+        ];
+
+        // Definir las aristas (transiciones) del autómata
+        var edges = [
+          { from: 'Lluvia', to: 'Nubes', label: '0.3', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Lluvia', to: 'Lluvia', label: '0.4', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Nubes', to: 'Nubes', label: '0.6', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Nubes', to: 'Lluvia', label: '0.2', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Nubes', to: 'Sol', label: '0.2', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Sol', to: 'Nubes', label: '0.1', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Sol', to: 'Sol', label: '0.8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Sol', to: 'Lluvia', label: '0.1', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+          { from: 'Lluvia', to: 'Sol', label: '0.3', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
+
+        ];
+
+        // Obtener el contenedor para el autómata
+        var container = document.getElementById('mynetwork');
+
+        // Definir los datos del autómata (nodos y aristas)
+        var data = {
+          nodes: nodes,
+          edges: edges
+        };
+
+        // Opciones de visualización del autómata
+        var options = {
+          nodes: {
+            font: { size: 20, color: '#000000' },
+            margin: 10
+          },
+          edges: {
+            font: { size: 12, color: '#000000' },
+            smooth: { type: 'continuous' }
+          },
+          physics: {
+            enabled: true,
+            solver: 'repulsion',
+            repulsion: {
+              nodeDistance: 150
+            }
+          },
+        };
+
+        // Crear la instancia del autómata visual
+        var network = new vis.Network(container, data, options);
+      });
+
+
+    </script>
 </body>
+
 </html>
