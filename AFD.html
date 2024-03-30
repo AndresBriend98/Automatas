@@ -10,35 +10,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Importar script JavaScript -->
   <script src="AFD.js" defer></script>
-  <!-- Estilos CSS internos -->
-  <style type="text/css">
-    /* Estilos para el contenedor del autómata */
-    #mynetwork {
-      width: 700px;
-      height: 300px;
-      border: 2px solid lightgray;
-      margin: 10px auto;
-    }
-    /* Estilos para el resultado de la verificación */
-    #resultado {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-    /* Estilos para el botón de verificación */
-    .btn-verificar {
-      background-color: purple;
-      border-color: purple;
-    }
-    /* Clase para ocultar elementos */
-    .hidden {
-      display: none;
-    }
-    /* Estilos para la información del autómata */
-    #info ul {
-      padding-left: 0;
-      list-style: none;
-    }
-  </style>
+  <!-- Importar estilos css -->
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 
@@ -145,13 +118,17 @@
   // Función para mostrar u ocultar la información del autómata
   function toggleInfo() {
     var infoDiv = document.getElementById("info");
-    // Verificar el estado actual de visualización y cambiarlo
+    var toggleBtn = document.getElementById("toggleBtn");
+
     if (infoDiv.style.display === "none") {
       infoDiv.style.display = "block"; // Mostrar información
+      toggleBtn.textContent = "Ocultar Información"; // Cambiar texto del botón
     } else {
       infoDiv.style.display = "none";  // Ocultar información
+      toggleBtn.textContent = "Mostrar Información"; // Cambiar texto del botón
     }
   }
+
   
   // Función que se ejecuta cuando se carga el DOM
   document.addEventListener('DOMContentLoaded', function () {

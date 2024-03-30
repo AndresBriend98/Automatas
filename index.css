@@ -1,0 +1,87 @@
+#mynetwork {
+    width: 700px;
+    height: 300px;
+    border: 2px solid rgb(110, 0, 28);
+    margin: 10px auto;
+}
+
+#resultado {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.btn-verificar {
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-verificar:hover {
+    background-color: rgb(255, 0, 242);
+    border-color: rgb(255, 0, 242);
+}
+
+.btn-verificar:focus {
+    outline: none;
+    /* Eliminar el contorno al enfocar */
+    box-shadow: none;
+    /* Eliminar la sombra al enfocar */
+}
+
+.btn-verificar:active {
+    background-color: purple;
+    border-color: purple;
+}
+
+
+.hidden {
+    display: none;
+    transition: opacity 0.3s ease;
+    /* Agregar una transición para suavizar el cambio */
+}
+
+#info.hidden {
+    transition: opacity 0.3s ease;
+}
+
+body {
+    background-color: rgb(7, 31, 24);
+}
+
+#info ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+
+p {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+h4 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+label[for="secuencia"] {
+    color: rgb(255, 255, 255);
+    /* Cambia el color del texto a rojo */
+    font-weight: bold;
+    /* Hace el texto en negrita */
+    font-size: 18px;
+    /* Cambia el tamaño de la fuente */
+}
+
+pre {
+    color: white;
+}
+
+li {
+    color: white;
+}
