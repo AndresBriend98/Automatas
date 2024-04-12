@@ -1,19 +1,19 @@
 // Matriz de transición
-var matrizTransicion = [
+const matrizTransicion = [
     [0.4, 0.3, 0.3],
     [0.2, 0.6, 0.2],
     [0.1, 0.1, 0.8]
 ];
 
 // Vector de probabilidades iniciales
-var vectorInicial = [0.0, 0.0, 1.0];
+const vectorInicial = [0.0, 0.0, 1.0];
 
 // Función para calcular la probabilidad
 function calcularProbabilidad(secuencia) {
     secuencia = secuencia.split(',').map(Number);
-    var probabilidad = vectorInicial[secuencia[0] - 1];
+    let probabilidad = vectorInicial[secuencia[0] - 1];
 
-    for (var i = 1; i < secuencia.length; i++) {
+    for (let i = 1; i < secuencia.length; i++) {
         probabilidad *= matrizTransicion[secuencia[i - 1] - 1][secuencia[i] - 1];
     }
 
@@ -23,7 +23,7 @@ function calcularProbabilidad(secuencia) {
 
 // Función para calcular la probabilidad y mostrar el resultado en la interfaz
 function mostrarResultado() {
-    var secuencia = document.getElementById("secuencia").value;
-    var resultado = calcularProbabilidad(secuencia);
+    const secuencia = document.getElementById("secuencia").value;
+    const resultado = calcularProbabilidad(secuencia);
     document.getElementById("resultado").innerText = "Resultado: " + resultado + "%";
 }
