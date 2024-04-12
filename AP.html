@@ -83,8 +83,8 @@
     <script type="text/javascript">
       // Función para mostrar u ocultar la información del autómata
       function toggleInfo() {
-        var infoDiv = document.getElementById("info");
-        var toggleBtn = document.getElementById("toggleBtn");
+        const infoDiv = document.getElementById("info");
+        const toggleBtn = document.getElementById("toggleBtn");
 
         if (infoDiv.style.display === "none") {
           infoDiv.style.display = "block"; // Mostrar información
@@ -99,14 +99,14 @@
       // Función que se ejecuta cuando se carga el DOM
       document.addEventListener('DOMContentLoaded', function () {
         // Definir los nodos (estados) del autómata
-        var nodes = [
+        const nodes = [
           { id: 'Lluvia', label: 'Lluvia', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
           { id: 'Nubes', label: 'Nubes', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
           { id: 'Sol', label: 'Sol', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' }
         ];
 
         // Definir las aristas (transiciones) del autómata
-        var edges = [
+        const edges = [
           { from: 'Lluvia', to: 'Nubes', label: '0.3', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
           { from: 'Lluvia', to: 'Lluvia', label: '0.4', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
           { from: 'Nubes', to: 'Nubes', label: '0.6', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
@@ -120,16 +120,16 @@
         ];
 
         // Obtener el contenedor para el autómata
-        var container = document.getElementById('mynetwork');
+        const container = document.getElementById('mynetwork');
 
         // Definir los datos del autómata (nodos y aristas)
-        var data = {
+        const data = {
           nodes: nodes,
           edges: edges
         };
 
         // Opciones de visualización del autómata
-        var options = {
+        const options = {
           nodes: {
             font: { size: 20, color: '#000000' },
             margin: 10
@@ -148,7 +148,7 @@
         };
 
         // Crear la instancia del autómata visual
-        var network = new vis.Network(container, data, options);
+        const network = new vis.Network(container, data, options);
       });
 
 

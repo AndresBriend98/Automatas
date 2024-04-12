@@ -120,8 +120,8 @@
   <script type="text/javascript">
     // Función para mostrar u ocultar la información del autómata
     function toggleInfo() {
-      var infoDiv = document.getElementById("info");
-      var toggleBtn = document.getElementById("toggleBtn");
+      const infoDiv = document.getElementById("info");
+      const toggleBtn = document.getElementById("toggleBtn");
 
       if (infoDiv.style.display === "none") {
         infoDiv.style.display = "block"; // Mostrar información
@@ -135,14 +135,14 @@
     // Función que se ejecuta cuando se carga el DOM
     document.addEventListener('DOMContentLoaded', function () {
       // Definir los nodos (estados) del autómata
-      var nodes = [
+      const nodes = [
         { id: 'a', label: 'A', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
         { id: 'b', label: 'B', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
         { id: 'c', label: 'C', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle', borderWidth: 6, borderWidthSelected: 6 },
       ];
 
       // Definir las aristas (transiciones) del autómata
-      var edges = [
+      const edges = [
         { from: 'a', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
         { from: 'a', to: 'c', label: '1,3,5,7,9', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
         { from: 'b', to: 'b', label: '0,2,4,6,8', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
@@ -152,16 +152,16 @@
       ];
 
       // Obtener el contenedor para el autómata
-      var container = document.getElementById('mynetwork');
+      const container = document.getElementById('mynetwork');
 
       // Definir los datos del autómata (nodos y aristas)
-      var data = {
+      const data = {
         nodes: nodes,
         edges: edges
       };
 
       // Opciones de visualización del autómata
-      var options = {
+      const options = {
         nodes: {
           font: { size: 20, color: '#000000' },
           margin: 10
@@ -180,7 +180,7 @@
       };
 
       // Crear la instancia del autómata visual
-      var network = new vis.Network(container, data, options);
+      const network = new vis.Network(container, data, options);
     });
 
 

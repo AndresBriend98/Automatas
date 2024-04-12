@@ -82,8 +82,8 @@
   <script type="text/javascript">
     // Función para mostrar u ocultar la información del autómata
     function toggleInfo() {
-      var infoDiv = document.getElementById("info");
-      var toggleBtn = document.getElementById("toggleBtn");
+      const infoDiv = document.getElementById("info");
+      const toggleBtn = document.getElementById("toggleBtn");
 
       if (infoDiv.style.display === "none") {
         infoDiv.style.display = "block"; // Mostrar información
@@ -97,7 +97,7 @@
     // Función que se ejecuta cuando se carga el DOM
     document.addEventListener('DOMContentLoaded', function () {
       // Definir los nodos (estados) del autómata
-      var nodes = [
+      const nodes = [
         { id: 'q0', label: 'q0', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
         { id: 'q1', label: 'q1', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
         { id: 'q2', label: 'q2', color: { background: '#FF69B4', border: '#000000' }, shape: 'circle' },
@@ -106,7 +106,7 @@
       ];
 
       // Definir las aristas (transiciones) del autómata
-      var edges = [
+      const edges = [
         { from: 'q0', to: 'q1', label: 'a', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
         { from: 'q1', to: 'q2', label: 'b', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
         { from: 'q2', to: 'q3', label: 'a', arrows: { to: { enabled: true, scaleFactor: 0.5 } } },
@@ -119,16 +119,16 @@
       ];
 
       // Obtener el contenedor para el autómata
-      var container = document.getElementById('mynetwork');
+      const container = document.getElementById('mynetwork');
 
       // Definir los datos del autómata (nodos y aristas)
-      var data = {
+      const data = {
         nodes: nodes,
         edges: edges
       };
 
       // Opciones de visualización del autómata
-      var options = {
+      const options = {
         nodes: {
           font: { size: 20, color: '#000000' },
           margin: 10
@@ -147,7 +147,7 @@
       };
 
       // Crear la instancia del autómata visual
-      var network = new vis.Network(container, data, options);
+      const network = new vis.Network(container, data, options);
     });
 
   </script>
