@@ -1,86 +1,96 @@
+/* Establece estilos para el contenedor del gráfico de red */
 #mynetwork {
-    width: 700px;
-    height: 300px;
-    border: 2px solid rgb(110, 0, 28);
-    margin: 10px auto;
+    width: 700px; /* Ancho del contenedor */
+    height: 300px; /* Altura del contenedor */
+    border: 2px solid rgb(110, 0, 28); /* Borde sólido con color RGB */
+    margin: 10px auto; /* Margen de 10px arriba y abajo, y centrado horizontalmente */
 }
 
+/* Establece estilos para el resultado */
 #resultado {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: 10px; /* Margen superior de 10px */
+    font-size: 16px; /* Tamaño de fuente de 16px */
 }
 
+/* Establece estilos para el botón de verificar */
 .btn-verificar {
-    background-color: purple;
-    border-color: purple;
+    background-color: purple; /* Color de fondo púrpura */
+    border-color: purple; /* Color del borde púrpura */
 }
 
+/* Establece estilos para el botón de verificar al pasar el cursor sobre él */
 .btn-verificar:hover {
-    background-color: rgb(255, 0, 242);
-    border-color: rgb(255, 0, 242);
+    background-color: rgb(255, 0, 242); /* Cambia el color de fondo a rosa */
+    border-color: rgb(255, 0, 242); /* Cambia el color del borde a rosa */
 }
 
+/* Establece estilos para el botón de verificar al estar enfocado */
 .btn-verificar:focus {
-    outline: none;
-    /* Eliminar el contorno al enfocar */
-    box-shadow: none;
-    /* Eliminar la sombra al enfocar */
+    outline: none; /* Elimina el contorno al estar enfocado */
+    box-shadow: none; /* Elimina la sombra al estar enfocado */
 }
 
+/* Establece estilos para el botón de verificar al estar activo */
 .btn-verificar:active {
-    background-color: purple;
-    border-color: purple;
+    background-color: purple; /* Restaura el color de fondo púrpura */
+    border-color: purple; /* Restaura el color del borde púrpura */
 }
 
+/* Clase para ocultar elementos */
 .hidden {
-    display: none;
-    transition: opacity 0.3s ease;
-    /* Agregar una transición para suavizar el cambio */
+    display: none; /* Oculta el elemento */
+    transition: opacity 0.3s ease; /* Agrega una transición de opacidad */
 }
 
+/* Establece estilos para la información oculta */
 #info.hidden {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* Agrega una transición de opacidad */
 }
 
+/* Establece estilos generales para el cuerpo del documento */
 body {
-    background-color: rgb(7, 31, 24);
+    background-color: rgb(7, 31, 24); /* Color de fondo del cuerpo */
 }
 
+/* Establece estilos para la lista no ordenada dentro de la información */
 #info ul {
-    padding-left: 0;
-    list-style: none;
+    padding-left: 0; /* Elimina el relleno izquierdo */
+    list-style: none; /* Elimina los estilos de lista predeterminados */
 }
 
-
+/* Establece estilos para los párrafos */
 p {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para los títulos de nivel 2 */
 h2 {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para los títulos de nivel 4 */
 h4 {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para los títulos de nivel 3 */
 h3 {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para los elementos de código preformateado */
 pre {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para los elementos de lista */
 li {
-    color: white;
+    color: white; /* Color del texto blanco */
 }
 
+/* Establece estilos para las etiquetas de los input con el atributo 'for' igual a "secuencia" */
 label[for="secuencia"] {
-    color: rgb(255, 255, 255);
-    /* Cambia el color del texto a rojo */
-    font-weight: bold;
-    /* Hace el texto en negrita */
-    font-size: 18px;
-    /* Cambia el tamaño de la fuente */
+    color: rgb(255, 255, 255); /* Color del texto blanco */
+    font-weight: bold; /* Establece el peso de la fuente en negrita */
+    font-size: 18px; /* Tamaño de fuente de 18px */
 }
